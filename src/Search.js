@@ -14,7 +14,7 @@ class Search extends Component {
         this.setState({query}, () => {
             search(query).then((results) => {
                 let books = results;
-                if (results.error) {
+                if (!results || results.error) {
                     books = [];
                 }
                 this.setState({
